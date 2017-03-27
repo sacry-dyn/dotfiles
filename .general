@@ -1,0 +1,48 @@
+#!/bin/bash
+
+alias ls="ls -laFG"
+alias tree='tree -f -Q -h'
+
+# Git alias
+alias gs='git status '
+alias gd='git diff '
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=iso'
+alias ga='git add '
+alias gc='git commit -m '
+alias grm='git rm '
+alias gb='git branch '
+alias gco='git checkout '
+alias gpull='git pull --rebase origin $(git_current_branch)'
+alias gpush='git push origin $(git_current_branch)'
+
+# Do I need this?
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
+# Cd
+alias drop="cd ~/Dropbox"
+alias cw="python ~/Dropbox/cw/cw.py"
+alias down="cd ~/Downloads"
+
+# Ruby + Rails
+export BUNDLER_EDITOR=subl
+alias be="bundle exec"
+
+# Builds
+alias runw='bash ./wip.sh'
+function initw {
+  if [[ -f "$PWD/wip.sh" ]]; then
+    echo "wip.sh already exists!"
+  else
+    touch wip.sh && chmod +x wip.sh
+    echo "#!/bin/bash\n\nset -e\n\necho \"Hello World!\"\n\nexit\n\nexit\n\n" > wip.sh
+    echo "created at $PWD/wip.sh"
+  fi
+}
+
+# Timing
+alias gtime='/usr/local/bin/gtime -f "user=%U system=%S total=%e max_rss=%MkB status=%x %C" $@'
+function xtime {
+  /usr/local/bin/gtime -v "$@"
+}

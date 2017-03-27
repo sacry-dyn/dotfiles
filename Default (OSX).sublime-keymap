@@ -1,0 +1,123 @@
+[
+  // Notes:
+  // - super = command
+
+  // -- Windows Management --
+  { "keys": ["super+shift+n"], "command": "new_window" },
+  { "keys": ["super+shift+w"], "command": "close_window" },
+  { "keys": ["super+o"], "command": "prompt_open" }, // open file
+  { "keys": ["super+shift+t"], "command": "reopen_last_file" },
+  { "keys": ["super+ctrl+f"], "command": "toggle_full_screen" },
+  { "keys": ["ctrl+tab"], "command": "next_view_in_stack" },
+  { "keys": ["ctrl+shift+tab"], "command": "prev_view_in_stack" },
+  {
+    "keys": ["shift+super+1"],
+    "command": "set_layout",
+    "args":
+    {
+      "cols": [0.0, 1.0],
+      "rows": [0.0, 1.0],
+      "cells": [[0, 0, 1, 1]]
+    }
+  },
+  {
+    "keys": ["shift+super+2"],
+    "command": "set_layout",
+    "args":
+    {
+      "cols": [0.0, 0.5, 1.0],
+      "rows": [0.0, 1.0],
+      "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+    }
+  },
+  { "keys": ["ctrl+1"], "command": "focus_group", "args": { "group": 0 } },
+  { "keys": ["ctrl+2"], "command": "focus_group", "args": { "group": 1 } },
+  { "keys": ["ctrl+3"], "command": "focus_group", "args": { "group": 2 } },
+
+  // -- General --
+  { "keys": ["super+n"], "command": "new_file" },
+  { "keys": ["super+s"], "command": "save" },
+  { "keys": ["super+shift+s"], "command": "prompt_save_as" },
+  { "keys": ["super+x"], "command": "cut" },
+  { "keys": ["super+c"], "command": "copy" },
+  { "keys": ["super+v"], "command": "paste" },
+  { "keys": ["super+a"], "command": "select_all" },
+  // autocompletion
+  { "keys": ["ctrl+space"], "command": "auto_complete" },
+  { "keys": ["ctrl+space"], "command": "replace_completion_with_auto_complete", "context":
+    [
+      { "key": "last_command", "operator": "equal", "operand": "insert_best_completion" },
+      { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+      { "key": "setting.tab_completion", "operator": "equal", "operand": true }
+    ]
+  },
+  { "keys": ["super+e"], "command": "copy_path" },
+
+  // -- Search --
+  { "keys": ["shift+super+m"], "command": "goto_definition" },
+  // Forward/backward jump between files
+  { "keys": ["ctrl+minus"], "command": "jump_back" },
+  { "keys": ["ctrl+shift+minus"], "command": "jump_forward" },
+
+  // -- In file search --
+  // Forward/backward search
+  { "keys": ["super+i"], "command": "show_panel", "args": {"panel": "incremental_find", "reverse": false} },
+  { "keys": ["super+shift+i"], "command": "show_panel", "args": {"panel": "incremental_find", "reverse": true} },
+  // regular find in file
+  { "keys": ["super+f"], "command": "show_panel", "args": {"panel": "find", "reverse": false} },
+  // find next
+  { "keys": ["super+g"], "command": "show_panel", "args": {"panel": "find", "reverse": false} },
+  { "keys": ["alt+super+g"], "command": "find_under" },
+  // replace
+  { "keys": ["super+alt+f"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
+  { "keys": ["super+alt+e"], "command": "replace_next" },
+
+  // -- In files search --
+  { "keys": ["super+shift+f"], "command": "show_panel", "args": {"panel": "find_in_files"} },
+  { "keys": ["f4"], "command": "next_result" },
+  { "keys": ["shift+f4"], "command": "prev_result" },
+
+  // -- General manipulation --
+  { "keys": ["super+z"], "command": "undo" },
+  { "keys": ["super+shift+z"], "command": "redo" },
+  { "keys": ["super+y"], "command": "redo_or_repeat" },
+  // tab = indent, shift + tab = unindent
+
+  // -- Movement --
+  { "keys": ["ctrl+alt+up"], "command": "scroll_lines", "args": {"amount": 1.0} },
+  { "keys": ["ctrl+alt+down"], "command": "scroll_lines", "args": {"amount": -1.0} },
+
+  // Recordings
+  { "keys": ["ctrl+q"], "command": "toggle_record_macro" },
+  { "keys": ["ctrl+shift+q"], "command": "run_macro" },
+
+  // -- Text manipulation --
+  // select multiple lines and write out
+  { "keys": ["ctrl+shift+up"], "command": "select_lines", "args": {"forward": false} },
+  { "keys": ["ctrl+shift+down"], "command": "select_lines", "args": {"forward": true} },
+  { "keys": ["shift+super+c"], "command": "swap_case" },
+  { "keys": ["shift+ctrl+s"], "command": "sort_lines", "args": {"case_sensitive": true} },
+  { "keys": ["ctrl+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
+  { "keys": ["super+j"], "command": "join_lines" },
+  { "keys": ["super+shift+d"], "command": "duplicate_line" },
+
+  // -- Needs improvement --
+  { "keys": ["super+forward_slash"], "command": "toggle_comment", "args": { "block": false } },
+  { "keys": ["super+alt+forward_slash"], "command": "toggle_comment", "args": { "block": true } },
+
+  // -- Not Working (OS/sublime shadowing) --
+  { "keys": ["ctrl+super+up"], "command": "swap_line_up" },
+  { "keys": ["ctrl+super+down"], "command": "swap_line_down" },
+
+  // -- Needs some love --
+  { "keys": ["super+k", "super+up"], "command": "new_pane" },
+  { "keys": ["super+k", "super+shift+up"], "command": "new_pane", "args": {"move": false} },
+  { "keys": ["super+k", "super+down"], "command": "close_pane" },
+  { "keys": ["super+k", "super+left"], "command": "focus_neighboring_group", "args": {"forward": false} },
+  { "keys": ["super+k", "super+right"], "command": "focus_neighboring_group" },
+  { "keys": ["super+k", "super+shift+left"], "command": "move_to_neighboring_group", "args": {"forward": false} },
+  { "keys": ["super+k", "super+shift+right"], "command": "move_to_neighboring_group" },
+
+  // -- Plugins --
+  { "keys": "ctrl+s", "command": "toggle_side_bar" }
+]

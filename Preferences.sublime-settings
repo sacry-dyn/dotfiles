@@ -1,0 +1,57 @@
+{
+	"color_scheme": "Packages/Inspired GitHub Color Scheme/InspiredGitHub.tmTheme",
+	"detect_indentation": false,
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.sublime-workspace"
+	],
+	"folder_exclude_patterns":
+	[
+		"public",
+		"log",
+		"tmp",
+		".svn",
+		".git",
+		".hg",
+		"CVS"
+	],
+	"font_size": 18,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"index_exclude_patterns":
+	[
+		"*.log",
+		"tmp",
+		"vendor",
+		"public"
+	],
+	"index_files": true,
+	"index_workers": 2,
+	"preview_on_click": true,
+	"show_encoding": false,
+	"show_line_endings": false,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}
