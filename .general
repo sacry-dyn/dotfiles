@@ -14,11 +14,7 @@ alias gb='git branch '
 alias gco='git checkout '
 alias gpull='git pull --rebase origin $(git_current_branch)'
 alias gpush='git push origin $(git_current_branch)'
-
-# Do I need this?
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
+alias gsession='git config --global credential.helper "cache --timeout 7200"'
 
 # Cd
 alias drop="cd ~/Dropbox"

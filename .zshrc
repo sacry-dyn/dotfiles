@@ -1,5 +1,3 @@
-#!/bin/bash
-
 export ZSH=$HOME/.oh-my-zsh
 
 export LC_ALL=en_US.UTF-8
@@ -17,6 +15,8 @@ export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/usr/X11/bin
 export PATH=$PATH:$HOME/bin
+
+source $ZSH/oh-my-zsh.sh
 
 DOTS=$HOME/dotfiles
 source $DOTS/.langs
