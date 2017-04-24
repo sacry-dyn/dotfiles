@@ -44,8 +44,7 @@ function xtime {
 }
 
 function cd-temp {
-  tmp=$(mktemp)
-  tmpdir=$(dirname $tmp)
-  mkdir -p $tmpdir
-  cd $tmpdir
+  tmp=$(mktemp -d)
+  mkdir -p $tmp
+  cd $tmp
 }
