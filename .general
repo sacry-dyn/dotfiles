@@ -42,3 +42,10 @@ alias gtime='/usr/local/bin/gtime -f "user=%U system=%S total=%e max_rss=%MkB st
 function xtime {
   /usr/local/bin/gtime -v "$@"
 }
+
+function cd-temp {
+  tmp=$(mktemp)
+  tmpdir=$(dirname $tmp)
+  mkdir -p $tmpdir
+  cd $tmpdir
+}
