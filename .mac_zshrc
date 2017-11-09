@@ -7,7 +7,7 @@ MAILCHECK=0
 ZSH_THEME="3den"
 CASE_SENSITIVE="true"
 
-# OSgaews-
+# OS
 export PATH=$PATH:/bin
 export PATH=$PATH:/usr/bin
 export PATH=$PATH:/usr/local/bin
@@ -19,9 +19,11 @@ export PATH=$PATH:$HOME/bin
 source $ZSH/oh-my-zsh.sh
 
 DOTS=$HOME/dotfiles
+SCRIPTS=$DOTS/scripts
+
 source $DOTS/.langs
 source $DOTS/.general
-source $SCRIPTS/.kuberc
+source $DOTS/.kuberc
 
 alias source_zsh='source ~/.zshrc'
 alias open_zsh='subl ~/.zshrc'
@@ -29,4 +31,14 @@ alias open_zsh='subl ~/.zshrc'
 # Editor Sublime
 export EDITOR='subl -w'
 alias subl-wd='$HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User'
+
+function mac-wifi {
+  networksetup -listallhardwareports | grep -A 2 "Hardware Port: Wi-Fi" | grep "Ethernet" | awk '{print $3}'
+  # ifconfig en0 | awk '/ether/{print $2}'
+}
+
+function ntitle {
+  python $SCRIPTS/title.py "$@"
+}
+
 
