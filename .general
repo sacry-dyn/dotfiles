@@ -17,8 +17,8 @@ alias gpush='git push origin $(git_current_branch)'
 alias gsession='git config --global credential.helper "cache --timeout 7200"'
 
 # Cd
-alias drop="cd ~/Dropbox"
-alias cw="python ~/Dropbox/cw/cw.py"
+alias drop="cd ~/dev/Dropbox"
+alias cw="python ~/dev/Dropbox/cw/cw.py"
 alias down="cd ~/Downloads"
 
 # Ruby + Rails
@@ -47,4 +47,13 @@ function cd-temp {
   tmp=$(mktemp -d)
   mkdir -p $tmp
   cd $tmp
+  initw
+}
+
+function p-kill {
+  echo "Killing.."
+  for pid in $(ps aux | grep $1 | grep -v grep | awk '{print $2}' | fold -s); do
+    echo "  $pid"
+    kill -9 $pid
+  done
 }

@@ -1,0 +1,12 @@
+# python3 envs
+function activate {
+  source $PWD/env/bin/activate
+}
+
+function deactivate {
+  source $PWD/env/bin/deactivate
+}
+
+hawmaster=$HOME/dev/uni/haw_master
+alias cd-uni="cd $hawmaster"
+alias current="cd $hawmaster/s2"

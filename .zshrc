@@ -30,8 +30,3 @@ alias open_zsh='subl ~/.zshrc'
 export EDITOR='subl -w'
 alias subl-wd='$HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User'
 
-# ZSH Prompt
-# export RPROMPT=''
-
-
-
